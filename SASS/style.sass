@@ -2,13 +2,18 @@
 $main-color: #9356DC
 $gradient-color: #FF79DA
 $checkmark-color: #99E2D0
-      
-*
-    font-family: 'Roboto'
+$background-color: #F6F6F6
 
-body
+      
+@mixin center
     display: flex
     justify-content: center
+    align-items: center
+   
+*
+    font-family: 'Roboto', sans-serif
+
+body
     margin: 0
 
 .main-container
@@ -16,10 +21,23 @@ body
     padding: 0
     box-sizing: border-box
 
-// Header
 header
-    display: flex
-    justify-content: center
-    align-items: center
+    @include center
+    height: 63px
+
+.city
+    @include center
+    height: 50px
+    background-color: #EAEAEA
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
     
-          
+.fa-solid
+    padding: 0 17px 0 0   
+
+.city-name
+    font-size: 16px
+    font-weight: 500
+    margin: 0
+
+
+      
