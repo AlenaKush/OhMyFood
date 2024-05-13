@@ -81,13 +81,17 @@ header {
   background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
 }
 
-.functions {
+.instruction {
   padding: 20px;
 }
-.functions__title {
+.instruction__title {
   font-size: 24px;
 }
-.functions__button {
+.instruction__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 72px;
   background-color: #F6F6F6;
@@ -97,4 +101,15 @@ header {
   font-size: 16px;
   font-weight: 500;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+}
+.instruction__button__nomber {
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 20px;
+  background-color: #9356DC;
+  color: #FFFFFF;
+}
+.instruction__button .fa-solid {
+  color: #7E7E7E;
 }/*# sourceMappingURL=style.css.map */
