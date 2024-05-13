@@ -87,7 +87,7 @@ header {
 .instruction__title {
   font-size: 24px;
 }
-.instruction__button {
+.instruction__point {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -103,7 +103,7 @@ header {
   font-weight: 500;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
 }
-.instruction__button__nomber {
+.instruction__point__number {
   border: none;
   width: 24px;
   height: 24px;
