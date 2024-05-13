@@ -10,10 +10,10 @@ $icon-color: #7E7E7E
 
 
       
-@mixin flex($direction: column)
+@mixin flex($direction: column, $justify-content: center)
     display: flex
     flex-direction: $direction
-    justify-content: center
+    justify-content: $justify-content
     align-items: center
    
 *
@@ -32,7 +32,7 @@ header
     height: 63px
 
 .city
-    @include flex($direction: row)
+    @include flex(row)
     height: 50px
     background-color: #EAEAEA
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.10)
@@ -90,13 +90,14 @@ header
         font-size: 24px
 
     &__button
-        @include flex($direction: row)
-        width: 100%
+        @include flex(row, start)
+        width: 96%
         height: 72px
         background-color: $background-color
         border: none
         border-radius: 20px
-        margin-bottom: 20px
+        padding: 0
+        margin: 0 0 20px 15px
         font-size: 16px
         font-weight: 500
         box-shadow: 4px 4px 15px (rgb(0, 0, 0, 0.15)) 
@@ -108,10 +109,14 @@ header
             border-radius: 20px
             background-color: $main-color
             color: $footer-font-color
+            margin: 0 20px 0 -12px
+            
 
-        .fa-solid
-            color: $icon-color
-         
+.fa-solid
+    color: $icon-color
+
+.fa-solid .icon-color
+    color: $main-color      
 
       
 

@@ -90,14 +90,15 @@ header {
 .instruction__button {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  width: 100%;
+  width: 96%;
   height: 72px;
   background-color: #F6F6F6;
   border: none;
   border-radius: 20px;
-  margin-bottom: 20px;
+  padding: 0;
+  margin: 0 0 20px 15px;
   font-size: 16px;
   font-weight: 500;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
@@ -109,7 +110,13 @@ header {
   border-radius: 20px;
   background-color: #9356DC;
   color: #FFFFFF;
+  margin: 0 20px 0 -12px;
 }
-.instruction__button .fa-solid {
+
+.fa-solid {
   color: #7E7E7E;
+}
+
+.fa-solid .icon-color {
+  color: #9356DC;
 }/*# sourceMappingURL=style.css.map */
