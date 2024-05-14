@@ -166,4 +166,35 @@ a {
 
 .restaurants__card__subtitle {
   margin: 0;
+}
+
+footer {
+  background-color: #353535;
+  height: 186px;
+  padding: 22px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+footer img {
+  color: white;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  margin: 15px 0 15px 0;
+}
+footer nav ul {
+  filter: brightness(0) invert(1);
+  list-style-type: none;
+  padding: 0;
+  font-size: 16px;
+  margin: 0;
+}
+footer nav ul li {
+  font-weight: 500;
+  margin-top: 15px;
+}
+footer nav ul li .fa-solid {
+  height: 16px;
+  width: 11px;
 }/*# sourceMappingURL=style.css.map */
