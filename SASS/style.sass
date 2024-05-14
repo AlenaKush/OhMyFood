@@ -22,6 +22,12 @@ $icon-color: #7E7E7E
 body
     margin: 0
 
+h2
+    font-size: 24px
+
+h3
+    font-size: 18px
+
 .main-container
     width: 100%
     padding: 0
@@ -86,9 +92,6 @@ header
 .instruction
     padding: 20px
 
-    &__title
-        font-size: 24px
-
     &__point
         @include flex(row, start)
         width: 96%
@@ -110,13 +113,36 @@ header
             background-color: $main-color
             color: $footer-font-color
             margin: 0 20px 0 -12px
-            
+            text-align: center
 
 .fa-solid
     color: $icon-color
 
 .fa-solid .icon-color
     color: $main-color      
+
+.restaurants
+    padding: 20px
+    background-color: $background-color
+    
+.restaurants__card__box
+    @include flex()
+    
+.restaurants__card
+       
+    img
+        height: 174px
+        width: 100%
+        object-fit: cover
+        border-top-left-radius: 20px
+        border-top-right-radius: 20px
+
+.restaurants__card__txt
+        padding-left: 10px
+        background-color: white
+        border-bottom-left-radius: 20px
+        border-bottom-right-radius: 20px
+
 
       
 
