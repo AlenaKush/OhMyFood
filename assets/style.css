@@ -87,6 +87,13 @@ header {
   border: none;
   border-radius: 30px;
   background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.title-box__button:hover {
+  background-image: linear-gradient(to bottom, #ff93e1, #a16be0);
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 .instruction {
