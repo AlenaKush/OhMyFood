@@ -42,37 +42,6 @@ header
         top: 50%   
         transform: translateY(-50%)
 
-.main-photo
-    height: 275px
-    overflow: hidden
-    position: relative
-    
-    img
-        height: 100%
-        width: 100%
-        object-fit: cover
-        
-    
-
-.menu
-    background-color: $background-color
-    margin-top: -70px
-    border: none
-    border-top-left-radius: 40px
-    border-top-right-radius: 40px
-    height: 500px
-    z-index: 1
-    position: relative
-
-    &__title
-        margin: 0
-        padding: 20px
-        font-size: 28px
-        font-weight: 400
-        font-family: "Shrikhand"
-        font-style: italic
-      
-
 
 .city
     @include flex(row)
@@ -235,6 +204,59 @@ footer
             .fa-solid
                 height: 16px
                 width: 11px
+
+//restaurants page 1
+.main-photo
+    height: 275px
+    overflow: hidden
+    position: relative
+    
+    img
+        height: 100%
+        width: 100%
+        object-fit: cover
+        
+.menu
+    background-color: $background-color
+    margin-top: -70px
+    border: none
+    border-top-left-radius: 40px
+    border-top-right-radius: 40px
+    z-index: 1
+    position: relative
+
+    &__title
+        @include flex(row, space-between)
+        padding: 20px
+        
+        h2
+            font-size: 28px
+            font-weight: 400
+            font-family: "Shrikhand"
+            font-style: italic
+            margin: 0
+
+.menu-content
+
+.dish
+    background-color: white
+    margin: 20px
+    border: none
+    border-radius: 20px
+
+    &__title
+        padding: 20px 20px 0 20px
+        margin: 0
+
+    &__subtitle
+        @include flex(row, space-between)
+        margin: 0
+        padding: 20px
+
+        p
+            margin: 0
+        
+      
 
 
 
