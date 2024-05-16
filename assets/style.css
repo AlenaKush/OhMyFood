@@ -26,6 +26,44 @@ header {
   justify-content: center;
   align-items: center;
   height: 63px;
+  position: relative;
+}
+header .fa-arrow-left {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main-photo {
+  height: 275px;
+  overflow: hidden;
+  position: relative;
+}
+.main-photo img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.menu {
+  background-color: #F6F6F6;
+  margin-top: -70px;
+  border: none;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  height: 500px;
+  z-index: 1;
+  position: relative;
+}
+.menu__title {
+  margin: 0;
+  padding: 20px;
+  font-size: 28px;
+  font-weight: 400;
+  font-family: "Shrikhand";
+  font-style: italic;
 }
 
 .city {
@@ -150,6 +188,7 @@ a {
      object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  padding-bottom: 0;
 }
 .card__content {
   padding: 15px;
@@ -169,7 +208,7 @@ a {
   font-weight: 300;
   margin: 5px 0;
 }
-.card__content i {
+.card__content .fa-heart {
   padding: 0;
 }
 

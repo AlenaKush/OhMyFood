@@ -7,8 +7,6 @@ $main-font-color: #000
 $secondary-font-color: #353535
 $footer-font-color: #FFFFFF
 $icon-color: #7E7E7E
-
-
       
 @mixin flex($direction: column, $justify-content: center, $align-items: center)
     display: flex
@@ -34,8 +32,47 @@ h3
     box-sizing: border-box
 
 header
-    @include flex
+    @include flex()
     height: 63px
+    position: relative
+
+    .fa-arrow-left
+        position: absolute
+        left: 20px
+        top: 50%   
+        transform: translateY(-50%)
+
+.main-photo
+    height: 275px
+    overflow: hidden
+    position: relative
+    
+    img
+        height: 100%
+        width: 100%
+        object-fit: cover
+        
+    
+
+.menu
+    background-color: $background-color
+    margin-top: -70px
+    border: none
+    border-top-left-radius: 40px
+    border-top-right-radius: 40px
+    height: 500px
+    z-index: 1
+    position: relative
+
+    &__title
+        margin: 0
+        padding: 20px
+        font-size: 28px
+        font-weight: 400
+        font-family: "Shrikhand"
+        font-style: italic
+      
+
 
 .city
     @include flex(row)
@@ -139,6 +176,8 @@ a
         
     
 .card
+
+    //margin-bottom: 20px
        
     img
         height: 174px
@@ -146,6 +185,7 @@ a
         object-fit: cover
         border-top-left-radius: 20px
         border-top-right-radius: 20px
+        padding-bottom: 0
 
     &__content
         padding: 15px
@@ -163,9 +203,8 @@ a
             font-weight: 300
             margin: 5px 0
 
-        i
+        .fa-heart
             padding: 0
-
              
 
 // Footer
