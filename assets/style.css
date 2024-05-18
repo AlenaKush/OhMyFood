@@ -137,7 +137,7 @@ header .fa-arrow-left {
   color: #7E7E7E;
 }
 
-.fa-solid .icon-color {
+.icon-color {
   color: #9356DC;
 }
 
@@ -150,6 +150,12 @@ a {
   padding: 20px;
   background-color: #F6F6F6;
 }
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .card img {
   height: 174px;
   width: 100%;
@@ -157,10 +163,10 @@ a {
      object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  padding-bottom: 0;
 }
 .card__content {
-  padding: 15px;
+  padding: 20px;
+  width: calc(100% - 40px);
   background-color: white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -170,15 +176,12 @@ a {
   align-items: center;
 }
 .card__content__title {
-  margin: 5px 0;
+  margin: 0 0 10px 0;
 }
 .card__content__subtitle {
   font-size: 17px;
   font-weight: 300;
-  margin: 5px 0;
-}
-.card__content .fa-heart {
-  padding: 0;
+  margin: 0;
 }
 
 footer {
