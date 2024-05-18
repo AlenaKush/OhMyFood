@@ -7,6 +7,7 @@ $main-font-color: #000
 $secondary-font-color: #353535
 $footer-font-color: #FFFFFF
 $icon-color: #7E7E7E
+$icon-activ: linear-gradient(to top, $gradient-color, $main-color)
       
 @mixin flex($direction: column, $justify-content: center, $align-items: center)
     display: flex
@@ -95,7 +96,7 @@ header
         border-radius: 30px
         background-image: linear-gradient(to bottom, $gradient-color, $main-color)
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15)
-        transition: background-color 0.5s ease, box-shadow 0.5s ease
+        transition: background-image 0.5s ease, box-shadow 0.5s ease
 
 .title-box__button:hover
         background-image: linear-gradient(to bottom,lighten($gradient-color, 5%), lighten($main-color, 5%))
@@ -178,12 +179,30 @@ a
             margin: 0
            
 //добавит трансформ
-        .fa-heart
-            
-            transform: 
+.heart-solid
+    opacity: 0
+    color: white
+    transition: opacity 0.5s ease, color 0.5s ease
 
-            background: linear-gradient(to bottom, $gradient-color, $main-color)
-                
+.heart-border
+    margin-right: -25px
+
+.heart-box:hover
+    .heart-solid
+        opacity: 1
+        background: $icon-activ
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+    .heart-border
+        opacity: 0
+        
+
+
+    
+    
+    
+
+        
              
 
 // Footer
