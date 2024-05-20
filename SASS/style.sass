@@ -8,7 +8,48 @@ $secondary-font-color: #353535
 $footer-font-color: #FFFFFF
 $icon-color: #7E7E7E
 $icon-activ: linear-gradient(to top, $gradient-color, $main-color)
-      
+    
+$loader-size: 50px
+$loader-border-width:5px
+$loader-color: #9356DC
+$loader-background: #FF79DA
+$transition-time: 1s
+
+.loader
+    width: $loader-size
+    height: $loader-size
+    border: $loader-border-width solid $loader-background
+    border-top: $loader-border-width solid $loader-color 
+    border-radius: 50%
+    animation: spin 1s linear infinite, hideLoader $transition-time forwards
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 1
+
+@keyframes spin
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+
+@keyframes hideLoader
+    0%
+        opacity: 1
+        visibility: visible
+    99%
+        opacity: 0
+        visibility: hidden
+    100%
+        display: none
+  
+@keyframes showContent
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
 @mixin flex($direction: column, $justify-content: center, $align-items: center)
     display: flex
     flex-direction: $direction
@@ -31,6 +72,9 @@ h3
     width: 100%
     padding: 0
     box-sizing: border-box
+    opacity: 0
+    animation: showContent $transition-time forwards $transition-time
+
 
 header
     @include flex()
@@ -203,15 +247,7 @@ a
         -webkit-text-fill-color: transparent
     .heart-border
         opacity: 0
-        
-
-
-    
-    
-    
-
-        
-             
+         
 
 // Footer
 footer
@@ -261,10 +297,10 @@ footer
     border-top-right-radius: 40px
     z-index: 1
     position: relative
+    padding: 20px
 
     &__title
-        @include flex(row, space-between)
-        padding: 20px
+        @include flex(row, space-between, start)
         
         h2
             font-size: 28px
@@ -275,6 +311,9 @@ footer
 
 .menu-content
 
+    &__dishes
+        width: 100%
+
 .dish
     background-color: white
     margin: 20px
@@ -282,16 +321,15 @@ footer
     border-radius: 20px
 
     &__title
-        padding: 20px 20px 0 20px
         margin: 0
 
     &__subtitle
         @include flex(row, space-between)
         margin: 0
-        padding: 20px
-
+        
         p
             margin: 0
+    
         
       
 
