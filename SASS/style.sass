@@ -13,7 +13,7 @@ $loader-size: 50px
 $loader-border-width:5px
 $loader-color: #9356DC
 $loader-background: #FF79DA
-$transition-time: 1s
+$transition-time: 0.1s
 
 .loader
     width: $loader-size
@@ -21,7 +21,7 @@ $transition-time: 1s
     border: $loader-border-width solid $loader-background
     border-top: $loader-border-width solid $loader-color 
     border-radius: 50%
-    animation: spin 1s linear infinite, hideLoader $transition-time forwards
+    animation: spin $transition-time linear infinite, hideLoader $transition-time forwards
     position: fixed
     top: 50%
     left: 50%
@@ -43,7 +43,15 @@ $transition-time: 1s
         visibility: hidden
     100%
         display: none
-  
+
+
+.main-container
+    width: 100%
+    padding: 0
+    box-sizing: border-box
+    opacity: 0
+    animation: showContent $transition-time forwards $transition-time
+
 @keyframes showContent
   0%
     opacity: 0
@@ -68,12 +76,6 @@ h2
 h3
     font-size: 18px
 
-.main-container
-    width: 100%
-    padding: 0
-    box-sizing: border-box
-    opacity: 0
-    animation: showContent $transition-time forwards $transition-time
 
 
 header
@@ -145,6 +147,7 @@ header
 .title-box__button:hover
         background-image: linear-gradient(to bottom,lighten($gradient-color, 5%), lighten($main-color, 5%))
         box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.25)
+        cursor: pointer
             
 .instruction
     padding: 20px
@@ -310,22 +313,36 @@ footer
             margin: 0
 
 .menu-content
-
+    &__title
+        width: 40px
+        h3
+            font-size: 16px
+            font-weight: 300
+            border-bottom: 3px solid $checkmark-color
+            padding-bottom: 5px
+    
     &__dishes
         width: 100%
+        
+        
 
 .dish
     background-color: white
-    margin: 20px
     border: none
     border-radius: 20px
+    padding: 17px 13px
+    margin-bottom: 10px
 
     &__title
-        margin: 0
+        margin: 0 0 5px 0
+        font-size: 18px
+        font-weight: 500
 
     &__subtitle
         @include flex(row, space-between)
         margin: 0
+        font-size: 15px
+        font-weight: 300
         
         p
             margin: 0

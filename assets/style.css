@@ -4,7 +4,7 @@
   border: 5px solid #FF79DA;
   border-top: 5px solid #9356DC;
   border-radius: 50%;
-  animation: spin 1s linear infinite, hideLoader 1s forwards;
+  animation: spin 0.1s linear infinite, hideLoader 0.1s forwards;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -33,6 +33,14 @@
     display: none;
   }
 }
+.main-container {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  opacity: 0;
+  animation: showContent 0.1s forwards 0.1s;
+}
+
 @keyframes showContent {
   0% {
     opacity: 0;
@@ -55,14 +63,6 @@ h2 {
 
 h3 {
   font-size: 18px;
-}
-
-.main-container {
-  width: 100%;
-  padding: 0;
-  box-sizing: border-box;
-  opacity: 0;
-  animation: showContent 1s forwards 1s;
 }
 
 header {
@@ -146,6 +146,7 @@ header .fa-arrow-left {
 .title-box__button:hover {
   background-image: linear-gradient(to bottom, #ff93e1, #a16be0);
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 
 .instruction {
@@ -330,18 +331,30 @@ footer nav ul li .fa-solid {
   margin: 0;
 }
 
+.menu-content__title {
+  width: 40px;
+}
+.menu-content__title h3 {
+  font-size: 16px;
+  font-weight: 300;
+  border-bottom: 3px solid #99E2D0;
+  padding-bottom: 5px;
+}
 .menu-content__dishes {
   width: 100%;
 }
 
 .dish {
   background-color: white;
-  margin: 20px;
   border: none;
   border-radius: 20px;
+  padding: 17px 13px;
+  margin-bottom: 10px;
 }
 .dish__title {
-  margin: 0;
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  font-weight: 500;
 }
 .dish__subtitle {
   display: flex;
@@ -349,6 +362,8 @@ footer nav ul li .fa-solid {
   justify-content: space-between;
   align-items: center;
   margin: 0;
+  font-size: 15px;
+  font-weight: 300;
 }
 .dish__subtitle p {
   margin: 0;
