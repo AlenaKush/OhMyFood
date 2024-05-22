@@ -13,7 +13,7 @@ $loader-size: 50px
 $loader-border-width:5px
 $loader-color: #9356DC
 $loader-background: #FF79DA
-$transition-time: 0.1s
+$transition-time: 0.5s
 
 .loader
     width: $loader-size
@@ -192,7 +192,6 @@ a
     &__cards
 
 .card
-
     margin-bottom: 20px
     @include flex()
     position: relative
@@ -313,18 +312,18 @@ footer
             margin: 0
 
 .menu-content
+    
     &__title
         width: 40px
+
         h3
             font-size: 16px
             font-weight: 300
             border-bottom: 3px solid $checkmark-color
             padding-bottom: 5px
-    
+            
     &__dishes
         width: 100%
-        
-        
 
 .dish
     background-color: white
@@ -332,6 +331,8 @@ footer
     border-radius: 20px
     padding: 17px 13px
     margin-bottom: 10px
+    
+
 
     &__title
         margin: 0 0 5px 0
@@ -346,9 +347,26 @@ footer
         
         p
             margin: 0
+
+        .euro
+            font-size: 15px
+            font-weight: 500
+            color: $secondary-font-color
+
+.entrees
+    opacity: 0
+    animation: showContent 1s 0.5s 1 forwards
+.plats
+    opacity: 0
+    animation: showContent 1s 1s 1 forwards
+.dessers
+    opacity: 0
+    animation: showContent 1s 5s 1 forwards
+
+            
     
-        
-      
+
+    
 
 
 

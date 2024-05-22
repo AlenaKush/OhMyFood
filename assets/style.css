@@ -4,7 +4,7 @@
   border: 5px solid #FF79DA;
   border-top: 5px solid #9356DC;
   border-radius: 50%;
-  animation: spin 0.1s linear infinite, hideLoader 0.1s forwards;
+  animation: spin 0.5s linear infinite, hideLoader 0.5s forwards;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -38,7 +38,7 @@
   padding: 0;
   box-sizing: border-box;
   opacity: 0;
-  animation: showContent 0.1s forwards 0.1s;
+  animation: showContent 0.5s forwards 0.5s;
 }
 
 @keyframes showContent {
@@ -367,4 +367,24 @@ footer nav ul li .fa-solid {
 }
 .dish__subtitle p {
   margin: 0;
+}
+.dish__subtitle .euro {
+  font-size: 15px;
+  font-weight: 500;
+  color: #353535;
+}
+
+.entrees {
+  opacity: 0;
+  animation: showContent 1s 0.5s 1 forwards;
+}
+
+.plats {
+  opacity: 0;
+  animation: showContent 1s 1s 1 forwards;
+}
+
+.dessers {
+  opacity: 0;
+  animation: showContent 1s 5s 1 forwards;
 }/*# sourceMappingURL=style.css.map */
