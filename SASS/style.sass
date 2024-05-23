@@ -13,7 +13,7 @@ $loader-size: 50px
 $loader-border-width:5px
 $loader-color: #9356DC
 $loader-background: #FF79DA
-$transition-time: 0.2s
+$transition-time: 0.5s
 
 .loader
     width: $loader-size
@@ -37,10 +37,8 @@ $transition-time: 0.2s
 @keyframes hideLoader
     0%
         opacity: 1
-        visibility: visible
     99%
         opacity: 0
-        visibility: hidden
     100%
         display: none
 
@@ -333,9 +331,6 @@ footer
     @include flex(space-between, start)
     position: relative
     overflow: hidden
-    
-    &:hover
-        
 
     &__content
         flex-grow: 1
@@ -360,16 +355,7 @@ footer
             font-size: 15px
             font-weight: 500
             color: $secondary-font-color
-
-.entrees
-    opacity: 0
-    animation: showContent 1s 1s 1 forwards
-.plats
-    opacity: 0
-    animation: showContent 1s 2s 1 forwards
-.desserts
-    opacity: 0
-    animation: showContent 1s 3s 1 forwards
+            transition: transform 0.5s ease
 
 .check
     width: 59px
@@ -378,7 +364,6 @@ footer
     border-top-right-radius: 20px
     border-bottom-right-radius: 20px
     @include flex()
-    overflow: hidden
     position: absolute
     top: 0
     height: 100%
@@ -398,13 +383,18 @@ footer
 
 .dish:hover .check
     right: 0
-               
-
-    
-
+.dish:hover .euro 
+    transform: translateX(-59px)
 
 
+.entrees
+    opacity: 0
+    animation: showContent 1s 1s 1 forwards
+.plats
+    opacity: 0
+    animation: showContent 1s 2s 1 forwards
+.desserts
+    opacity: 0
+    animation: showContent 1s 3s 1 forwards
 
-
-
-      
+   
