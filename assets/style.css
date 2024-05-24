@@ -407,17 +407,15 @@ footer nav ul li .fa-solid {
 
 .dish:hover .dish__check {
   display: flex;
-  animation: SlideLeft 1s ease 0 1 forwards;
+  animation: SlideLeft 1s forwards;
 }
 
 @keyframes SlideLeft {
   0% {
-    margin-left: -100%;
-    width: 300%;
+    margin-right: -59px;
   }
   100% {
     margin-right: 0;
-    width: 100%;
   }
 }
 .entrees {
