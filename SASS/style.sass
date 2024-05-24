@@ -13,7 +13,7 @@ $loader-size: 50px
 $loader-border-width:5px
 $loader-color: #9356DC
 $loader-background: #FF79DA
-$transition-time: 0.5s
+$transition-time: 0.3s
 
 .loader
     width: $loader-size
@@ -312,12 +312,10 @@ footer
     
     &__title
         width: 40px
-
-        h3
-            font-size: 16px
-            font-weight: 300
-            border-bottom: 3px solid $checkmark-color
-            padding-bottom: 5px
+        font-size: 16px
+        font-weight: 300
+        border-bottom: 3px solid $checkmark-color
+        padding-bottom: 5px
             
     &__dishes
         width: 100%
@@ -326,65 +324,70 @@ footer
     background-color: white
     border: none
     border-radius: 20px
-    padding: 13px 13px
     margin-bottom: 10px
-    @include flex(space-between, start)
-    position: relative
-    overflow: hidden
-
-    &__content
-        flex-grow: 1
-        margin-right: 10px
-
-
+    @include flex(row)
+  
     &__title
         margin: 0 0 5px 0
+        padding-left: 13px
         font-size: 18px
         font-weight: 500
+        flex-grow: 1
+        padding-top: 13px
         
     &__subtitle
-        @include flex(row, space-between)
         margin: 0
+        padding-left: 13px
         font-size: 15px
         font-weight: 300
+        padding-bottom: 13px
+ 
+    &__price
+        font-size: 15px
+        padding: 13px
+        font-weight: 500
+        color: $secondary-font-color
+        margin-left: auto
+        margin-bottom: 0
+        padding-bottom: 13px
+        align-self: stretch
+        vertical-align: bottom
         
-        p
-            margin: 0
-
-        .euro
-            font-size: 15px
-            font-weight: 500
-            color: $secondary-font-color
-            transition: transform 0.5s ease
-
-.check
-    width: 59px
-    background-color: $checkmark-color
-    border: none
-    border-top-right-radius: 20px
-    border-bottom-right-radius: 20px
-    @include flex()
-    position: absolute
-    top: 0
-    height: 100%
-    right: -100%
-    transition: right 0.5s ease
-
-    i
-        color: $checkmark-color
+    &__check
+        width: 59px
+        height: inherit
+        @include flex()
+        background-color: $checkmark-color
         border: none
-        width: 20px
-        height: 20px
-        background-color: white
-        border-radius: 10px
-        padding: 0
-        font-size: 16px
-        @include flex() 
+        border-top-right-radius: 20px
+        border-bottom-right-radius: 20px
+        align-self: stretch
+        display: none
+      
+        i
+            color: $checkmark-color
+            border: none
+            width: 20px
+            height: 20px
+            background-color: white
+            border-radius: 10px
+            padding: 0
+            font-size: 16px
+            @include flex() 
 
-.dish:hover .check
-    right: 0
-.dish:hover .euro 
-    transform: translateX(-59px)
+.dish:hover .dish__check
+    display: flex
+    animation: SlideLeft 1s ease 0 1 forwards
+    
+@keyframes SlideLeft
+    0%
+        margin-left: -100%
+        width: 300%
+    100%
+        margin-right: 0
+        width: 100%
+
+
 
 
 .entrees
