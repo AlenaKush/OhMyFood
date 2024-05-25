@@ -255,6 +255,7 @@ a {
 .heart-box:hover .heart-solid {
   opacity: 1;
   background: linear-gradient(to top, #FF79DA, #9356DC);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -407,7 +408,7 @@ footer nav ul li .fa-solid {
 
 .dish:hover .dish__check {
   display: flex;
-  animation: SlideLeft 1s forwards;
+  animation: SlideLeft 1s ease forwards;
 }
 
 @keyframes SlideLeft {
@@ -416,6 +417,18 @@ footer nav ul li .fa-solid {
   }
   100% {
     margin-right: 0;
+  }
+}
+.dish:not:hover .dish-check {
+  animation: SlideRight 1s ease forwards, fadeOut 1s ease forwards;
+}
+
+@keyframes SlideRight {
+  0% {
+    margin-right: 0;
+  }
+  100% {
+    margin-right: -59px;
   }
 }
 .entrees {
@@ -431,4 +444,57 @@ footer nav ul li .fa-solid {
 .desserts {
   opacity: 0;
   animation: showContent 1s 3s 1 forwards;
+}
+
+@media (min-width: 768px) {
+  .instruction__point-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .instruction__point {
+    width: 322px;
+    margin: 15px;
+  }
+  .restaurants__cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .card {
+    padding: 15px;
+  }
+  .card__img {
+    height: 174px;
+    width: 490px;
+  }
+  .card__img__nouveau {
+    top: 30px;
+    right: 30px;
+  }
+  footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    align-items: end;
+    height: 114px;
+    padding: 0;
+  }
+  footer img {
+    padding: 0 50px 30px 20px;
+    margin: 0;
+  }
+  footer nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+  }
+  footer nav ul li {
+    padding: 0 30px 30px 0;
+    margin: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
