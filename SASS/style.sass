@@ -8,26 +8,35 @@ $secondary-font-color: #353535
 $footer-font-color: #FFFFFF
 $icon-color: #7E7E7E
 $icon-activ: linear-gradient(to top, $gradient-color, $main-color)
-    
 $loader-size: 50px
 $loader-border-width:5px
 $loader-color: #9356DC
 $loader-background: #FF79DA
 $transition-time: 0.3s
 
-.loader
-    width: $loader-size
-    height: $loader-size
-    border: $loader-border-width solid $loader-background
-    border-top: $loader-border-width solid $loader-color 
-    border-radius: 50%
-    animation: spin $transition-time linear infinite, hideLoader $transition-time forwards
-    position: fixed
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-    z-index: 1
+@mixin button($btn-width)
+    width: $btn-width
+    height: 50px
+    font-size: 16px
+    font-weight: 500
+    color: white
+    border: none
+    border-radius: 30px
+    background-image: linear-gradient(to bottom, $gradient-color, $main-color)
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15)
+    transition: background-image 0.5s ease, box-shadow 0.5s ease
 
+@mixin flex($direction: column, $justify-content: center, $align-items: center)
+    display: flex
+    flex-direction: $direction
+    justify-content: $justify-content
+    align-items: $align-items
+
+@mixin button-animation()
+    background-image: linear-gradient(to bottom,lighten($gradient-color, 5%), lighten($main-color, 5%))
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.25)
+    cursor: pointer
+   
 @keyframes spin
     0%
         transform: rotate(0deg)
@@ -42,25 +51,33 @@ $transition-time: 0.3s
     100%
         display: none
 
-.main-container
-    width: 100%
-    padding: 0
-    box-sizing: border-box
-    opacity: 0
-    animation: showContent $transition-time forwards $transition-time
-
 @keyframes showContent
   0%
     opacity: 0
   100%
     opacity: 1
 
-@mixin flex($direction: column, $justify-content: center, $align-items: center)
-    display: flex
-    flex-direction: $direction
-    justify-content: $justify-content
-    align-items: $align-items
-   
+.loader
+    width: $loader-size
+    height: $loader-size
+    border: $loader-border-width solid $loader-background
+    border-top: $loader-border-width solid $loader-color 
+    border-radius: 50%
+    animation: spin $transition-time linear infinite, hideLoader $transition-time forwards
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 1
+
+.main-container
+    width: 100%
+    padding: 0
+    box-sizing: border-box
+    opacity: 0
+    animation: showContent $transition-time forwards $transition-time
+    
+
 *
     font-family: 'Roboto', sans-serif
 
@@ -73,8 +90,6 @@ h2
 h3
     font-size: 18px
 
-
-
 header
     @include flex()
     height: 63px
@@ -85,7 +100,6 @@ header
         left: 20px
         top: 50%   
         transform: translateY(-50%)
-
 
 .city
     @include flex(row)
@@ -130,21 +144,10 @@ header
         color: $secondary-font-color
 
     &__button
-        width: 218px
-        height: 50px
-        font-size: 16px
-        font-weight: 500
-        color: white
-        border: none
-        border-radius: 30px
-        background-image: linear-gradient(to bottom, $gradient-color, $main-color)
-        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15)
-        transition: background-image 0.5s ease, box-shadow 0.5s ease
-
+        @include button(218px)
+        
 .title-box__button:hover
-        background-image: linear-gradient(to bottom,lighten($gradient-color, 5%), lighten($main-color, 5%))
-        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.25)
-        cursor: pointer
+        @include button-animation()
             
 .instruction
     padding: 20px
@@ -281,6 +284,7 @@ footer
 //restaurants page 1
 .main-photo
     height: 275px
+    width: 100%
     overflow: hidden
     position: relative
     
@@ -409,14 +413,20 @@ footer
     opacity: 0
     animation: showContent 1s 3s 1 forwards
 
+.button
+    @include flex()
+
+    &__order
+        @include button(186px)
+        margin: 40px 0
+ 
+        &:hover
+            @include button-animation()
 
 @media (min-width: 768px)
     .instruction
     
-        
         &__title
-
-        
 
         &__point-box
             @include flex(row, center)
