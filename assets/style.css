@@ -41,6 +41,81 @@
     margin-right: -59px;
   }
 }
+@keyframes SlideLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes SlideRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes hideLoader {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+@keyframes showContent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes SlideLeft {
+  0% {
+    margin-right: -59px;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+@keyframes SlideRight {
+  0% {
+    margin-right: 0;
+  }
+  100% {
+    margin-right: -59px;
+  }
+}
+@keyframes SlideLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes SlideRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 .loader {
   width: 50px;
   height: 50px;
@@ -55,6 +130,65 @@
   z-index: 1;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes hideLoader {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+@keyframes showContent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes SlideLeft {
+  0% {
+    margin-right: -59px;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+@keyframes SlideRight {
+  0% {
+    margin-right: 0;
+  }
+  100% {
+    margin-right: -59px;
+  }
+}
+@keyframes SlideLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes SlideRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 header .fa-arrow-left {
   position: absolute;
   left: 20px;
@@ -123,6 +257,7 @@ header .fa-arrow-left {
   justify-content: center;
   align-items: center;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 }
 .dish__title {
   margin: 0 0 5px 0;
@@ -162,7 +297,6 @@ header .fa-arrow-left {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   align-self: stretch;
-  display: none;
 }
 .dish__check i {
   color: #99E2D0;
@@ -184,8 +318,9 @@ header .fa-arrow-left {
   animation: SlideLeft 1s ease forwards;
 }
 
-.dish:not:hover .dish-check {
-  animation: SlideRight 1s ease forwards, fadeOut 1s ease forwards;
+.dish:not(:hover) .dish__check {
+  animation: SlideRight 1s ease forwards;
+  transform: translateX(100%);
 }
 
 .entrees {
@@ -231,6 +366,65 @@ header .fa-arrow-left {
   cursor: pointer;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes hideLoader {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+@keyframes showContent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes SlideLeft {
+  0% {
+    margin-right: -59px;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+@keyframes SlideRight {
+  0% {
+    margin-right: 0;
+  }
+  100% {
+    margin-right: -59px;
+  }
+}
+@keyframes SlideLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes SlideRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 @media (min-width: 1024px) {
   .main-container {
     align-items: center;
@@ -282,19 +476,19 @@ header .fa-arrow-left {
   .card {
     padding: 15px;
   }
-  .card__img {
-    height: 174px;
+  .card img {
+    height: 176px;
     width: 460px;
   }
-  .card__img__nouveau {
-    top: 30px;
+  .card__nouveau {
+    top: 5px;
     right: 30px;
   }
   footer {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 114px;
     padding: 0;
     width: 100%;
@@ -305,7 +499,7 @@ header .fa-arrow-left {
   footer nav ul {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: end;
     align-items: center;
   }
   footer nav ul li {
@@ -511,6 +705,7 @@ a {
   background-color: #F6F6F6;
   width: 100%;
 }
+
 .card {
   margin-bottom: 20px;
   display: flex;
