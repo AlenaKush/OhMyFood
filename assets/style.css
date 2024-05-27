@@ -202,6 +202,9 @@ main {
   margin: 0 20px 0 -12px;
   text-align: center;
 }
+.instruction__point i {
+  padding-right: 10px;
+}
 
 .fa-solid {
   color: #7E7E7E;
