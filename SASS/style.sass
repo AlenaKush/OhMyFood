@@ -1,74 +1,9 @@
-// General
-$main-color: #9356DC
-$gradient-color: #FF79DA
-$checkmark-color: #99E2D0
-$background-color: #F6F6F6
-$main-font-color: #000
-$secondary-font-color: #353535
-$footer-font-color: #FFFFFF
-$icon-color: #7E7E7E
-$icon-activ: linear-gradient(to top, $gradient-color, $main-color)
-$loader-size: 50px
-$loader-border-width:5px
-$loader-color: #9356DC
-$loader-background: #FF79DA
-$transition-time: 0.3s
-
-@mixin button($btn-width)
-    width: $btn-width
-    height: 50px
-    font-size: 16px
-    font-weight: 500
-    color: white
-    border: none
-    border-radius: 30px
-    background-image: linear-gradient(to bottom, $gradient-color, $main-color)
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15)
-    transition: background-image 0.5s ease, box-shadow 0.5s ease
-
-@mixin flex($direction: column, $justify-content: center, $align-items: center)
-    display: flex
-    flex-direction: $direction
-    justify-content: $justify-content
-    align-items: $align-items
-
-@mixin button-animation()
-    background-image: linear-gradient(to bottom,lighten($gradient-color, 5%), lighten($main-color, 5%))
-    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.25)
-    cursor: pointer
-   
-@keyframes spin
-    0%
-        transform: rotate(0deg)
-    100%
-        transform: rotate(360deg)
-
-@keyframes hideLoader
-    0%
-        opacity: 1
-    99%
-        opacity: 0
-    100%
-        display: none
-
-@keyframes showContent
-  0%
-    opacity: 0
-  100%
-    opacity: 1
-
-.loader
-    width: $loader-size
-    height: $loader-size
-    border: $loader-border-width solid $loader-background
-    border-top: $loader-border-width solid $loader-color 
-    border-radius: 50%
-    animation: spin $transition-time linear infinite, hideLoader $transition-time forwards
-    position: fixed
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-    z-index: 1
+@import mixins
+@import variables
+@import keyframes
+@import loader
+@import restaurant
+@import responsive
 
 .main-container
     width: 100%
@@ -101,17 +36,10 @@ header
     width: 100%
     position: relative
 
-    .fa-arrow-left
-        position: absolute
-        left: 20px
-        top: 50%   
-        transform: translateY(-50%)
-
 main
     width: 100%
     @include flex()
     
-
 .city
     @include flex(row)
     height: 50px
@@ -280,9 +208,7 @@ a
         -webkit-text-fill-color: transparent
     .heart-border
         opacity: 0
-         
 
-// Footer
 footer
     background-color: $secondary-font-color
     height: 186px
@@ -309,236 +235,6 @@ footer
             .fa-solid
                 height: 16px
                 width: 11px
-
-//restaurants page 1
-.main-photo
-    height: 275px
-    width: 100%
-    overflow: hidden
-    position: relative
-    
-    img
-        height: 100%
-        width: 100%
-        object-fit: cover
-        
-.menu
-    background-color: $background-color
-    width: 100%
-    margin-top: -70px
-    border: none
-    border-top-left-radius: 40px
-    border-top-right-radius: 40px
-    z-index: 1
-    position: relative
-    flex-direction: column
-
-    &__title
-        @include flex(row, space-between)
-        padding: 20px
-
-        h2
-            font-size: 28px
-            font-weight: 400
-            font-family: "Shrikhand"
-            font-style: italic
-            margin: 0
-
-.menu-content
-    
-    
-    &__title
-        width: 40px
-        font-size: 16px
-        font-weight: 300
-        border-bottom: 3px solid $checkmark-color
-        padding-bottom: 5px
-        margin-left: 20px
-            
-    &__dishes
-        width: 100%
-
-.dish
-    background-color: white
-    border: none
-    border-radius: 20px
-    margin: 0 10px 10px
-    @include flex(row)
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15)
-    
-    &__title
-        margin: 0 0 5px 0
-        padding-left: 13px
-        font-size: 18px
-        font-weight: 500
-        flex-grow: 1
-        padding-top: 13px
-        
-    &__subtitle
-        margin: 0
-        padding-left: 13px
-        font-size: 15px
-        font-weight: 300
-        padding-bottom: 13px
- 
-    &__price
-        font-size: 15px
-        padding: 13px
-        font-weight: 500
-        color: $secondary-font-color
-        margin-left: auto
-        margin-bottom: 0
-        padding-bottom: 13px
-        align-self: stretch
-        vertical-align: bottom
-        
-    &__check
-        width: 59px
-        height: inherit
-        @include flex()
-        background-color: $checkmark-color
-        border: none
-        border-top-right-radius: 20px
-        border-bottom-right-radius: 20px
-        align-self: stretch
-        display: none
-      
-        i
-            color: $checkmark-color
-            border: none
-            width: 20px
-            height: 20px
-            background-color: white
-            border-radius: 10px
-            padding: 0
-            font-size: 16px
-            @include flex() 
-
-.dish:hover .dish__check
-    display: flex
-    animation: SlideLeft 1s ease forwards
-    
-@keyframes SlideLeft
-    0%
-        margin-right: -59px
-    100%
-        margin-right: 0
-
-
-.dish:not:hover .dish-check
-    animation: SlideRight 1s ease forwards, fadeOut 1s ease forwards
-       
-@keyframes SlideRight
-    0%
-        margin-right: 0
-    100%
-        margin-right: -59px
-
-
-
-.entrees
-    margin-top: 40px
-    opacity: 0
-    animation: showContent 1s 1s 1 forwards
-.plats
-    margin-top: 40px
-    opacity: 0
-    animation: showContent 1s 2s 1 forwards
-.desserts
-    margin-top: 40px
-    opacity: 0
-    animation: showContent 1s 3s 1 forwards
-
-.button
-    @include flex()
-
-    &__order
-        @include button(186px)
-        margin: 40px 0
- 
-        &:hover
-            @include button-animation()
-
-@media (min-width: 1024px)
-    .main-container
-        align-items: center
-    
-    .page
-        align-items: center
-
-    .instruction
-        max-width: 1080px
-        @include flex(column, center, center)
-        
-        &__title
-            padding-left: 30px
-            width: 950px
-            padding-left: 0
-
-        &__point-box
-            @include flex(row, center)
-            padding-left: 0
-            width: 950px
-        
-        &__point
-            width: 322px
-            margin: 15px
-
-    .restaurants
-        display: flex
-        flex-direction: column
-        align-items: center
-    
-
-        &__title
-            max-width: 1010px
-            width: 950px
-
-        &__cards
-            @include flex(row)
-            flex-wrap: wrap
-            max-width: 980px
-        
-    .card
-        padding: 15px
-
-        &__img
-            height: 174px
-            width: 460px
-
-            &__nouveau
-                top: 30px
-                right: 30px
-    
-    footer
-        @include flex(row-reverse, end, end)
-        height: 114px
-        padding: 0
-        width: 100%
-
-        img
-            margin: 10px 30px 30px 10px
-
-        nav ul
-            @include flex(row, end, center)
-            li
-                padding: 0 10px 30px 0
-                margin: 0
-    
-    .menu
-        width: 100%
-        max-width: 1055px
-        box-sizing: border-box
-        display: flex
-
-        &__title
-            justify-content: center
-            h2
-                margin-right: 20px
-    
-        .heart-box
-            padding: 0
-            @include flex()
             
 
         

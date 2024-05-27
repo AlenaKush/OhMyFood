@@ -1,0 +1,138 @@
+header
+    .fa-arrow-left
+        position: absolute
+        left: 20px
+        top: 50%   
+        transform: translateY(-50%)
+    
+.main-photo
+    height: 275px
+    width: 100%
+    overflow: hidden
+    position: relative
+    
+    img
+        height: 100%
+        width: 100%
+        object-fit: cover
+        
+.menu
+    background-color: $background-color
+    width: 100%
+    margin-top: -70px
+    border: none
+    border-top-left-radius: 40px
+    border-top-right-radius: 40px
+    z-index: 1
+    position: relative
+    flex-direction: column
+
+    &__title
+        @include flex(row, space-between)
+        padding: 20px
+
+        h2
+            font-size: 28px
+            font-weight: 400
+            font-family: "Shrikhand"
+            font-style: italic
+            margin: 0
+
+.menu-content
+    
+    &__title
+        width: 40px
+        font-size: 16px
+        font-weight: 300
+        border-bottom: 3px solid $checkmark-color
+        padding-bottom: 5px
+        margin-left: 20px
+            
+    &__dishes
+        width: 100%
+
+.dish
+    background-color: white
+    border: none
+    border-radius: 20px
+    margin: 0 10px 10px
+    @include flex(row)
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15)
+    
+    &__title
+        margin: 0 0 5px 0
+        padding-left: 13px
+        font-size: 18px
+        font-weight: 500
+        flex-grow: 1
+        padding-top: 13px
+        
+    &__subtitle
+        margin: 0
+        padding-left: 13px
+        font-size: 15px
+        font-weight: 300
+        padding-bottom: 13px
+ 
+    &__price
+        font-size: 15px
+        padding: 13px
+        font-weight: 500
+        color: $secondary-font-color
+        margin-left: auto
+        margin-bottom: 0
+        padding-bottom: 13px
+        align-self: stretch
+        vertical-align: bottom
+        
+    &__check
+        width: 59px
+        height: inherit
+        @include flex()
+        background-color: $checkmark-color
+        border: none
+        border-top-right-radius: 20px
+        border-bottom-right-radius: 20px
+        align-self: stretch
+        display: none
+      
+        i
+            color: $checkmark-color
+            border: none
+            width: 20px
+            height: 20px
+            background-color: white
+            border-radius: 10px
+            padding: 0
+            font-size: 16px
+            @include flex() 
+
+.dish:hover .dish__check
+    display: flex
+    animation: SlideLeft 1s ease forwards
+
+.dish:not:hover .dish-check
+    animation: SlideRight 1s ease forwards, fadeOut 1s ease forwards
+       
+.entrees
+    margin-top: 40px
+    opacity: 0
+    animation: showContent 1s 1s 1 forwards
+.plats
+    margin-top: 40px
+    opacity: 0
+    animation: showContent 1s 2s 1 forwards
+.desserts
+    margin-top: 40px
+    opacity: 0
+    animation: showContent 1s 3s 1 forwards
+
+.button
+    @include flex()
+
+    &__order
+        @include button(186px)
+        margin: 40px 0
+ 
+        &:hover
+            @include button-animation()
