@@ -72,17 +72,22 @@ $transition-time: 0.3s
 
 .main-container
     width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
     padding: 0
     box-sizing: border-box
     opacity: 0
     animation: showContent $transition-time forwards $transition-time
-    
 
 *
     font-family: 'Roboto', sans-serif
-
+    box-sizing: border-box
 body
     margin: 0
+    display: flex
+    justify-content: center
+    align-items: center
 
 h2
     font-size: 24px
@@ -93,6 +98,7 @@ h3
 header
     @include flex()
     height: 63px
+    width: 100%
     position: relative
 
     .fa-arrow-left
@@ -101,12 +107,18 @@ header
         top: 50%   
         transform: translateY(-50%)
 
+main
+    width: 100%
+    @include flex()
+    
+
 .city
     @include flex(row)
     height: 50px
+    width: 100%
     background-color: #EAEAEA
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.10)
-    margin-bottom: 6px
+    margin-bottom: 4px
     position: relative
 
     &::after
@@ -130,6 +142,7 @@ header
     @include flex
     height: 287px
     background-color: $background-color
+    width: 100%
 
     &__title
         margin: 0
@@ -150,17 +163,25 @@ header
         @include button-animation()
             
 .instruction
-    padding: 20px
+    width: 100%
+
+    &__title
+        padding: 20px
+        margin: 0
+        width: 100%
     
+    &__point-box
+        padding-bottom: 20px
+        padding-left: 32px
+        
     &__point
         @include flex(row, start)
         width: 96%
+        margin-bottom: 20px
         height: 72px
         background-color: $background-color
         border: none
         border-radius: 20px
-        padding: 0
-        margin: 0 0 20px 15px
         font-size: 16px
         font-weight: 500
         box-shadow: 4px 4px 15px (rgb(0, 0, 0, 0.15)) 
@@ -188,7 +209,7 @@ a
 .restaurants
     padding: 20px
     background-color: $background-color
-        
+    width: 100%
     &__cards
 
 .card
@@ -217,7 +238,7 @@ a
 
     &__content
         padding: 20px
-        width: calc( 100% - 40px )
+        width: 100%
         background-color: white
         border-bottom-left-radius: 20px
         border-bottom-right-radius: 20px
@@ -256,22 +277,21 @@ a
 footer
     background-color: $secondary-font-color
     height: 186px
-    padding: 22px 25px
+    width: 100%
     @include flex(column, center, start)
     
     img
         color: white
         height: 20px
         filter: brightness(0) invert(1)
-        margin: 15px 0 15px 0
-
+        margin: 15px 0 15px 20px
 
     nav ul
         filter: brightness(0) invert(1)
         list-style-type: none
         padding: 0
         font-size: 16px
-        margin: 0
+        margin: 0 0 0 20px
         
         li
             font-weight: 500
@@ -295,17 +315,19 @@ footer
         
 .menu
     background-color: $background-color
+    width: 100%
     margin-top: -70px
     border: none
     border-top-left-radius: 40px
     border-top-right-radius: 40px
     z-index: 1
     position: relative
-    padding: 20px
+    flex-direction: column
 
     &__title
         @include flex(row, space-between, start)
-        
+        padding: 20px
+
         h2
             font-size: 28px
             font-weight: 400
@@ -322,6 +344,7 @@ footer
         font-weight: 300
         border-bottom: 3px solid $checkmark-color
         padding-bottom: 5px
+        margin-left: 20px
             
     &__dishes
         width: 100%
@@ -330,7 +353,7 @@ footer
     background-color: white
     border: none
     border-radius: 20px
-    margin-bottom: 10px
+    margin: 0 10px 10px
     @include flex(row)
     
     &__title
@@ -423,28 +446,52 @@ footer
         &:hover
             @include button-animation()
 
-@media (min-width: 768px)
-    .instruction
+@media (min-width: 1024px)
+    .main-container
+        align-items: center
     
-        &__title
+    .page
+        align-items: center
 
+    .instruction
+        max-width: 1080px
+        @include flex(column, center, center)
+        
+        &__title
+            padding-left: 30px
+            width: 950px
+            padding-left: 0
+            
         &__point-box
             @include flex(row, center)
+            padding-left: 0
+            width: 950px
         
         &__point
             width: 322px
             margin: 15px
 
-    .restaurants__cards
-        @include flex(row)
-        flex-wrap: wrap
+    .restaurants
+        display: flex
+        flex-direction: column
+        align-items: center
+    
 
+        &__title
+            max-width: 1010px
+            width: 950px
+
+        &__cards
+            @include flex(row)
+            flex-wrap: wrap
+        
     .card
         padding: 15px
+        
 
         &__img
             height: 174px
-            width: 490px
+            width: 460px
 
             &__nouveau
                 top: 30px
@@ -454,15 +501,24 @@ footer
         @include flex(row-reverse, end, end)
         height: 114px
         padding: 0
+        width: 100%
 
         img
-            padding: 0 50px 30px 20px
-            margin: 0
+            margin: 10px 30px 30px 10px
+
         nav ul
             @include flex(row, end, center)
             li
-                padding: 0 30px 30px 0
+                padding: 0 10px 30px 0
                 margin: 0
+    
+    .menu
+        width: 100%
+        max-width: 1055px
+        box-sizing: border-box
+        display: flex
+
+
         
 
     
