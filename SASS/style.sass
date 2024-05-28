@@ -1,10 +1,10 @@
-@import 'mixins'
-@import 'variables'
-@import 'keyframes'
-@import 'loader'
-@import 'restaurant'
-@import 'responsive'
-
+@import variables
+@import mixins
+@import keyframes
+@import loader
+@import header
+@import footer
+@import restaurant
 
 .main-container
     width: 100%
@@ -30,12 +30,6 @@ h2
 
 h3
     font-size: 18px
-
-header
-    @include flex()
-    height: 63px
-    width: 100%
-    position: relative
 
 main
     width: 100%
@@ -156,17 +150,17 @@ a
         border-top-left-radius: 15px
         border-top-right-radius: 15px
     
-        &__nouveau
-            position: absolute
-            top: 10px
-            right: 10px
-            font-size: 14px
-            font-weight: 500
-            color: #008766
-            background-color: #99E2D0
-            margin: 0
-            padding: 6px 14px 6px 14px
-            border-radius: 2px
+    &__nouveau
+        position: absolute
+        top: 10px
+        right: 10px
+        font-size: 14px
+        font-weight: 500
+        color: #008766
+        background-color: #99E2D0
+        margin: 0
+        padding: 6px 14px 6px 14px
+        border-radius: 2px
 
     &__content
         padding: 20px
@@ -207,30 +201,68 @@ a
         -webkit-text-fill-color: transparent
     .heart-border
         opacity: 0
-         
-footer
-    background-color: $secondary-font-color
-    height: 186px
-    width: 100%
-    @include flex(column, center, start)
+
+@media (min-width: 1024px)
+    .main-container
+        align-items: center
     
-    img
-        color: white
-        height: 20px
-        filter: brightness(0) invert(1)
-        margin: 15px 0 15px 20px
+    .page
+        align-items: center
 
-    nav ul
-        filter: brightness(0) invert(1)
-        list-style-type: none
-        padding: 0
-        font-size: 16px
-        margin: 0 0 0 20px
+    .instruction
+        max-width: 1080px
+        @include flex(column, center, center)
         
-        li
-            font-weight: 500
-            margin-top: 15px
+        &__title
+            padding-left: 30px
+            width: 950px
+            padding-left: 0
 
-            .fa-solid
-                height: 16px
-                width: 11px
+        &__point-box
+            @include flex(row, center)
+            padding-left: 0
+            width: 950px
+        
+        &__point
+            width: 322px
+            margin: 15px
+
+    .restaurants
+        display: flex
+        flex-direction: column
+        align-items: center
+    
+        &__title
+            max-width: 1010px
+            width: 950px
+    
+        &__cards
+            @include flex(row)
+            flex-wrap: wrap
+            max-width: 980px
+        
+    .card
+        padding: 15px
+
+        img
+            height: 176px
+            width: 460px
+
+        &__nouveau
+            top: 25px
+            right: 25px
+    
+    .menu
+        width: 100%
+        max-width: 1055px
+        box-sizing: border-box
+        display: flex
+
+        &__title
+            justify-content: center
+            h2
+                margin-right: 20px
+    
+        .heart-box
+            padding: 0
+            @include flex()

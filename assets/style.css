@@ -57,65 +57,6 @@
     transform: translateX(53%);
   }
 }
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes hideLoader {
-  0% {
-    opacity: 1;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    display: none;
-  }
-}
-@keyframes showContent {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes SlideLeft {
-  0% {
-    margin-right: -59px;
-  }
-  100% {
-    margin-right: 0;
-  }
-}
-@keyframes SlideRight {
-  0% {
-    margin-right: 0;
-  }
-  100% {
-    margin-right: -59px;
-  }
-}
-@keyframes SlideLeft {
-  0% {
-    transform: translateX(53%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes SlideRight {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(53%);
-  }
-}
 .loader {
   width: 50px;
   height: 50px;
@@ -130,63 +71,71 @@
   z-index: 1;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 63px;
+  width: 100%;
+  position: relative;
 }
-@keyframes hideLoader {
-  0% {
-    opacity: 1;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    display: none;
-  }
+
+footer {
+  background-color: #353535;
+  height: 186px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
 }
-@keyframes showContent {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+footer img {
+  color: white;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  margin: 15px 0 15px 20px;
 }
-@keyframes SlideLeft {
-  0% {
-    margin-right: -59px;
-  }
-  100% {
-    margin-right: 0;
-  }
+footer nav ul {
+  filter: brightness(0) invert(1);
+  list-style-type: none;
+  padding: 0;
+  font-size: 16px;
+  margin: 0 0 0 20px;
 }
-@keyframes SlideRight {
-  0% {
-    margin-right: 0;
-  }
-  100% {
-    margin-right: -59px;
-  }
+footer nav ul li {
+  font-weight: 500;
+  margin-bottom: 15px;
 }
-@keyframes SlideLeft {
-  0% {
-    transform: translateX(53%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+footer nav ul li .fa-solid {
+  height: 16px;
+  width: 11px;
+  margin-right: 15px;
 }
-@keyframes SlideRight {
-  0% {
-    transform: translateX(0);
+
+@media (min-width: 1024px) {
+  footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: flex-end;
+    background-color: #353535;
+    height: 114px;
+    padding: 0;
+    width: 100%;
   }
-  100% {
-    transform: translateX(53%);
+  footer img {
+    margin: 10px 30px 30px 10px;
+  }
+  footer nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+  }
+  footer nav ul li {
+    padding: 0 30px 30px 0;
+    margin: 0;
   }
 }
 header .fa-arrow-left {
@@ -366,166 +315,6 @@ header .fa-arrow-left {
   cursor: pointer;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes hideLoader {
-  0% {
-    opacity: 1;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    display: none;
-  }
-}
-@keyframes showContent {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes SlideLeft {
-  0% {
-    margin-right: -59px;
-  }
-  100% {
-    margin-right: 0;
-  }
-}
-@keyframes SlideRight {
-  0% {
-    margin-right: 0;
-  }
-  100% {
-    margin-right: -59px;
-  }
-}
-@keyframes SlideLeft {
-  0% {
-    transform: translateX(53%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes SlideRight {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(53%);
-  }
-}
-@media (min-width: 1024px) {
-  .main-container {
-    align-items: center;
-  }
-  .page {
-    align-items: center;
-  }
-  .instruction {
-    max-width: 1080px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .instruction__title {
-    padding-left: 30px;
-    width: 950px;
-    padding-left: 0;
-  }
-  .instruction__point-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-left: 0;
-    width: 950px;
-  }
-  .instruction__point {
-    width: 322px;
-    margin: 15px;
-  }
-  .restaurants {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .restaurants__title {
-    max-width: 1010px;
-    width: 950px;
-  }
-  .restaurants__cards {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 980px;
-  }
-  .card {
-    padding: 15px;
-  }
-  .card img {
-    height: 176px;
-    width: 460px;
-  }
-  .card__nouveau {
-    top: 5px;
-    right: 30px;
-  }
-  footer {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-    background-color: red;
-    height: 114px;
-    padding: 0;
-    width: 100%;
-  }
-  footer img {
-    margin: 10px 30px 30px 10px;
-  }
-  footer nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-  }
-  footer nav ul li {
-    padding: 0 10px 30px 0;
-    margin: 0;
-  }
-  .menu {
-    width: 100%;
-    max-width: 1055px;
-    box-sizing: border-box;
-    display: flex;
-  }
-  .menu__title {
-    justify-content: center;
-  }
-  .menu__title h2 {
-    margin-right: 20px;
-  }
-  .menu .heart-box {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
 .main-container {
   width: 100%;
   display: flex;
@@ -555,16 +344,6 @@ h2 {
 
 h3 {
   font-size: 18px;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 63px;
-  width: 100%;
-  position: relative;
 }
 
 main {
@@ -722,7 +501,7 @@ a {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.card__img__nouveau {
+.card__nouveau {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -782,33 +561,82 @@ a {
   opacity: 0;
 }
 
-footer {
-  background-color: #353535;
-  height: 186px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-}
-footer img {
-  color: white;
-  height: 20px;
-  filter: brightness(0) invert(1);
-  margin: 15px 0 15px 20px;
-}
-footer nav ul {
-  filter: brightness(0) invert(1);
-  list-style-type: none;
-  padding: 0;
-  font-size: 16px;
-  margin: 0 0 0 20px;
-}
-footer nav ul li {
-  font-weight: 500;
-  margin-top: 15px;
-}
-footer nav ul li .fa-solid {
-  height: 16px;
-  width: 11px;
+@media (min-width: 1024px) {
+  .main-container {
+    align-items: center;
+  }
+  .page {
+    align-items: center;
+  }
+  .instruction {
+    max-width: 1080px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .instruction__title {
+    padding-left: 30px;
+    width: 950px;
+    padding-left: 0;
+  }
+  .instruction__point-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    width: 950px;
+  }
+  .instruction__point {
+    width: 322px;
+    margin: 15px;
+  }
+  .restaurants {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .restaurants__title {
+    max-width: 1010px;
+    width: 950px;
+  }
+  .restaurants__cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 980px;
+  }
+  .card {
+    padding: 15px;
+  }
+  .card img {
+    height: 176px;
+    width: 460px;
+  }
+  .card__nouveau {
+    top: 25px;
+    right: 25px;
+  }
+  .menu {
+    width: 100%;
+    max-width: 1055px;
+    box-sizing: border-box;
+    display: flex;
+  }
+  .menu__title {
+    justify-content: center;
+  }
+  .menu__title h2 {
+    margin-right: 20px;
+  }
+  .menu .heart-box {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }/*# sourceMappingURL=style.css.map */
