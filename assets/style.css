@@ -43,7 +43,7 @@
 }
 @keyframes SlideLeft {
   0% {
-    transform: translateX(100%);
+    transform: translateX(53%);
   }
   100% {
     transform: translateX(0);
@@ -54,7 +54,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(53%);
   }
 }
 @keyframes spin {
@@ -102,7 +102,7 @@
 }
 @keyframes SlideLeft {
   0% {
-    transform: translateX(100%);
+    transform: translateX(53%);
   }
   100% {
     transform: translateX(0);
@@ -113,7 +113,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(53%);
   }
 }
 .loader {
@@ -175,7 +175,7 @@
 }
 @keyframes SlideLeft {
   0% {
-    transform: translateX(100%);
+    transform: translateX(53%);
   }
   100% {
     transform: translateX(0);
@@ -186,7 +186,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(53%);
   }
 }
 header .fa-arrow-left {
@@ -254,7 +254,7 @@ header .fa-arrow-left {
   margin: 0 10px 10px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
   overflow: hidden;
@@ -274,31 +274,31 @@ header .fa-arrow-left {
   font-weight: 300;
   padding-bottom: 13px;
 }
-.dish__price {
+.dish .price-check {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.dish .price-check .price {
   font-size: 15px;
   padding: 13px;
   font-weight: 500;
   color: #353535;
-  margin-left: auto;
-  margin-bottom: 0;
-  padding-bottom: 13px;
-  align-self: stretch;
-  vertical-align: bottom;
+  margin: 0;
 }
-.dish__check {
+.dish .price-check .check {
   width: 59px;
-  height: inherit;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #99E2D0;
-  border: none;
+  height: 71px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  align-self: stretch;
 }
-.dish__check i {
+.dish .price-check .check i {
   color: #99E2D0;
   border: none;
   width: 20px;
@@ -313,12 +313,12 @@ header .fa-arrow-left {
   align-items: center;
 }
 
-.dish:hover .dish__check {
+.dish:hover .price-check {
   display: flex;
   animation: SlideLeft 1s ease forwards;
 }
 
-.dish:not(:hover) .dish__check {
+.dish:not(:hover) .price-check {
   animation: SlideRight 1s ease forwards;
   transform: translateX(100%);
 }
@@ -411,7 +411,7 @@ header .fa-arrow-left {
 }
 @keyframes SlideLeft {
   0% {
-    transform: translateX(100%);
+    transform: translateX(53%);
   }
   100% {
     transform: translateX(0);
@@ -422,7 +422,7 @@ header .fa-arrow-left {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(53%);
   }
 }
 @media (min-width: 1024px) {
@@ -486,9 +486,9 @@ header .fa-arrow-left {
   }
   footer {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    background-color: red;
     height: 114px;
     padding: 0;
     width: 100%;

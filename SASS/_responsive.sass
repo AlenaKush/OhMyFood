@@ -1,7 +1,6 @@
-@import variables
-@import keyframes
-@import mixins
-    
+@import 'variables'
+@import 'keyframes'
+@import 'mixins'
     
 @media (min-width: 1024px)
     .main-container
@@ -54,7 +53,10 @@
             right: 30px
     
     footer
-        @include flex()
+        display: flex
+        flex-direction: row-reverse
+        justify-content: flex-start
+        background-color: red
         height: 114px
         padding: 0
         width: 100%
