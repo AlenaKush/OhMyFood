@@ -346,6 +346,11 @@ h3 {
   font-size: 18px;
 }
 
+h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
 main {
   width: 100%;
   display: flex;
@@ -377,7 +382,7 @@ main {
 .city__name {
   font-size: 16px;
   font-weight: 500;
-  margin: 10;
+  margin: 10px;
   color: #353535;
 }
 
@@ -417,6 +422,10 @@ main {
   background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
   transition: background-image 0.5s ease, box-shadow 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .title-box__button:hover {

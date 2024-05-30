@@ -31,6 +31,10 @@ h2
 h3
     font-size: 18px
 
+h4 
+    font-size: 16px
+    font-weight: 500
+
 main
     width: 100%
     @include flex()
@@ -55,7 +59,7 @@ main
     &__name
         font-size: 16px
         font-weight: 500
-        margin: 10
+        margin: 10px
         color: $secondary-font-color
         
 .location
@@ -81,6 +85,7 @@ main
 
     &__button
         @include button(218px)
+        @include flex()
         
 .title-box__button:hover
         @include button-animation()
