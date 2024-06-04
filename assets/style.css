@@ -250,7 +250,6 @@ header .fa-arrow-left {
 
 .dish:not(:hover) .price-check {
   animation: SlideRight 1s ease forwards;
-  transform: translateX(100%);
 }
 
 .entrees {
